@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, maximum-scale=10.0, initial-scale=1.0">
@@ -51,7 +52,7 @@ body {
 }
 
 a {
-  color: steelblue;
+  color: rgb(70, 130, 180);
 }
 
 a:not(:hover),
@@ -60,12 +61,12 @@ a:not(:hover)::before {
 }
 
 #examples {
-  background: #ddd;
+  background: rgb(221, 221, 221);
   height: 460px;
   overflow: hidden;
   padding: 0;
   position: relative;
-  border-top: solid 1px #fff;
+  border-top: solid 1px rgb(255, 255, 255);
 }
 
 #examples-container {
@@ -79,19 +80,19 @@ a:not(:hover)::before {
   display: block;
   width: 100%;
   position: absolute;
-  background: white;
+  background: rgb(255, 255, 255);
   height: 16px;
   z-index: 2;
 }
 
 #examples-container:before {
   bottom: -16px;
-  box-shadow: 0px -8px 16px rgba(0,0,0,.3);
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, .3);
 }
 
 #examples-container:after {
   top: -16px;
-  box-shadow: 0px 8px 16px rgba(0,0,0,.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .3);
 }
 
 #examples-deep {
@@ -126,7 +127,7 @@ a:not(:hover)::before {
 }
 
 h1 {
-  color: #555;
+  color: rgb(85, 85, 85);
   font-size: 4rem;
   line-height: 3.5rem;
   font-weight: 200;
@@ -211,12 +212,12 @@ header,
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom,#ffc,#ffa);
-  border-bottom: solid 1px rgba(0,0,0,0.1);
+  background: linear-gradient(to bottom, rgb(255, 255, 204), rgb(255, 255, 170));
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
 }
 
-#observable-banner a  {
-  color: rgba(0,0,0,0.8);
+#observable-banner a {
+  color: rgba(0, 0, 0, 0.8);
 }
 
 section {
@@ -263,7 +264,7 @@ code {
 
 pre {
   overflow: scroll;
-  box-shadow: -1.1em 0 0 0 white, -1.2em 0 0 0 #ccc;
+  box-shadow: -1.1em 0 0 0 rgb(255, 255, 255), -1.2em 0 0 0 rgb(204, 204, 204);
   margin: 2em 0;
   line-height: inherit;
 }
@@ -991,7 +992,7 @@ function moved() {
 <section title="Summary">
 <h2 class="hidden">Summary</h2>
 <div>
-<p><b>D3.js</b> is a JavaScript library for manipulating documents based on data. <b>D3</b> helps you bring data to life using HTML, SVG, and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation.
+<p><strong>D3.js</strong> is a JavaScript library for manipulating documents based on data. <strong>D3</strong> helps you bring data to life using HTML, SVG, and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation.
 
 <p>Download the latest version <span id="version"></span> here:</p>
 <p class="download-link">
@@ -1026,7 +1027,7 @@ d3.select("#version").text(" (" + d3.version + ")");
 <section title="Introduction">
 <h2><a name="introduction" href="#introduction">Introduction</a></h2>
 <div>
-<p><b>D3</b> allows you to bind arbitrary data to a Document Object Model (DOM), and then apply data-driven transformations to the document. For example, you can use D3 to generate an HTML table from an array of numbers. Or, use the same data to create an interactive SVG bar chart with smooth transitions and interaction.
+<p><strong>D3</strong> allows you to bind arbitrary data to a Document Object Model (DOM), and then apply data-driven transformations to the document. For example, you can use D3 to generate an HTML table from an array of numbers. Or, use the same data to create an interactive SVG bar chart with smooth transitions and interaction.
 
 <p>D3 is not a monolithic framework that seeks to provide every conceivable feature. Instead, D3 solves the crux of the problem: efficient manipulation of documents based on data. This avoids proprietary representation and affords extraordinary flexibility, exposing the full capabilities of web standards such as HTML, SVG, and CSS. With minimal overhead, D3 is extremely fast, supporting large datasets and dynamic behaviors for interaction and animation. D3’s functional style allows code reuse through a diverse collection of <a href="https://github.com/d3/d3/blob/main/API.md">official</a> and <a href="https://www.npmjs.com/browse/keyword/d3-module">community-developed</a> modules.
 </div>
@@ -1049,7 +1050,7 @@ for (var i = 0; i &lt; paragraphs.length; i++) {
   paragraph.style.setProperty("color", "blue", null);
 }</code></pre>
 
-<p>D3 employs a declarative approach, operating on arbitrary sets of nodes called <i>selections</i>. For example, you can rewrite the above loop as:
+<p>D3 employs a declarative approach, operating on arbitrary sets of nodes called <em>selections</em>. For example, you can rewrite the above loop as:
 
 <pre><code>d3.selectAll("p").style("color", "blue");</code></pre>
 
@@ -1072,7 +1073,7 @@ for (var i = 0; i &lt; paragraphs.length; i++) {
 <h2><a name="properties" href="#properties">Dynamic Properties</a></h2>
 
 <div>
-<p>Readers familiar with other DOM frameworks such as <a href="https://jquery.com/">jQuery</a> should immediately recognize similarities with D3. Yet styles, attributes, and other properties can be specified as <i>functions of data</i> in D3, not just simple constants. Despite their apparent simplicity, these functions can be surprisingly powerful; the <a href="https://github.com/d3/d3-geo/blob/main/README.md#geoPath">d3.geoPath</a> function, for example, projects <a href="https://tools.ietf.org/html/rfc7946">geographic coordinates</a> into SVG <a href="https://www.w3.org/TR/SVG/paths.html#PathData">path data</a>. D3 provides many built-in reusable functions and function factories, such as <a href="https://github.com/d3/d3-shape">graphical primitives</a> for area, line and pie charts.
+<p>Readers familiar with other DOM frameworks such as <a href="https://jquery.com/">jQuery</a> should immediately recognize similarities with D3. Yet styles, attributes, and other properties can be specified as <em>functions of data</em> in D3, not just simple constants. Despite their apparent simplicity, these functions can be surprisingly powerful; the <a href="https://github.com/d3/d3-geo/blob/main/README.md#geoPath">d3.geoPath</a> function, for example, projects <a href="https://tools.ietf.org/html/rfc7946">geographic coordinates</a> into SVG <a href="https://www.w3.org/TR/SVG/paths.html#PathData">path data</a>. D3 provides many built-in reusable functions and function factories, such as <a href="https://github.com/d3/d3-shape">graphical primitives</a> for area, line and pie charts.
 <p>For example, to randomly color paragraphs:
 
 <pre><code>d3.selectAll("p").style("color", function() {
@@ -1099,7 +1100,7 @@ for (var i = 0; i &lt; paragraphs.length; i++) {
 <h2><a name="enter-exit" href="#enter-exit">Enter and Exit</a></h2>
 
 <div>
-<p>Using D3’s <i>enter</i> and <i>exit</i> selections, you can create new nodes for incoming data and remove outgoing nodes that are no longer needed.
+<p>Using D3’s <em>enter</em> and <em>exit</em> selections, you can create new nodes for incoming data and remove outgoing nodes that are no longer needed.
 
 <p>When data is bound to a selection, each element in the data array is paired with the corresponding node in the selection. If there are fewer nodes than data, the extra data elements form the enter selection, which you can instantiate by appending to the <code>enter</code> selection. For example:
 
@@ -1149,7 +1150,7 @@ p.exit().remove();</code></pre>
 <h2><a name="transitions" href="#transitions">Transitions</a></h2>
 
 <div>
-<p>D3’s focus on transformation extends naturally to animated transitions. Transitions gradually interpolate styles and attributes over time. Tweening can be controlled via easing functions such as “elastic”, “cubic-in-out” and “linear”. D3’s interpolators support both primitives, such as numbers and numbers embedded within strings (font sizes, path data, <i>etc.</i>), and compound values. You can even extend D3’s interpolator registry to support complex properties and data structures.
+<p>D3’s focus on transformation extends naturally to animated transitions. Transitions gradually interpolate styles and attributes over time. Tweening can be controlled via easing functions such as “elastic”, “cubic-in-out” and “linear”. D3’s interpolators support both primitives, such as numbers and numbers embedded within strings (font sizes, path data, <em>etc.</em>), and compound values. You can even extend D3’s interpolator registry to support complex properties and data structures.
 
 <p>For example, to fade the background of the page to black:
 
@@ -1204,3 +1205,4 @@ d3.selectAll("code").each(function() { hljs.highlightBlock(this); });
 </script>
 <script async src="//www.google-analytics.com/analytics.js"></script>
 </body>
+</html>
